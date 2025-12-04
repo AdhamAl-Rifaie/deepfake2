@@ -1,0 +1,63 @@
+{
+  "navbar": {
+    "home": "Home",
+    "overview": "Overview",
+    "get_started": "Get Started",
+    "about_us": "About Us",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "DeepFake Detection",
+    "subtitle": "Not everything you see is what it seems "
+  },
+  "overview": {
+    "title": "Project Overview",
+    "intro": "Our DeepFake Detector project leverages advanced AI algorithms to identify and analyze manipulated videos with exceptional precision.",
+    "goal_title": "🎯 Goal",
+    "goal_text": "To automatically detect DeepFake videos by dividing the face into regions and tracking temporal changes within each part.The system analyzes frame-by-frame variations to identify unnatural inconsistencies or distortions that indicate video manipulation.",
+    "tech_title": "🧠 Technology",
+    "tech_text": "Built using YuNet for face detection and Temporal Transformer Networks for sequential frame analysis. The system divides the face into temporal regions, extracts intensity and residual features between consecutive frames, and applies patch embedding with efficient self-attention to achieve accurate DeepFake classification.",
+    "impact_title": "🌍 Impact",
+    "impact_text": "Empowering users and media platforms to verify the credibility of online videos and images.By promoting transparency and trust in digital media, our project contributes to reducing misinformation and building a safer online environment"
+  },
+  "get_started": {
+    "title": "Detect DeepFake Videos Easily",
+    "text": "Upload your video to check if it's real or fake — powered by Artificial Intelligence.",
+    "button": "Get Started"
+  },
+  "about": {
+    "title": "Meet Our Team",
+    "subtitle": "We’re a group of AI engineers and developers working together for safer digital media."
+  },
+  "contact": {
+    "title": "Get in Touch",
+    "text": "Follow us or reach out through our social platforms:",
+    "send_message": "Send a Message",
+    "name_placeholder": "Your Name",
+    "email_placeholder": "Your Email",
+    "message_placeholder": "Your Message",
+    "submit_button": "Submit",
+    "sending": "Sending...",
+    "success": "Message sent successfully!",
+    "error": "An error occurred while sending the message. Please try again",
+    "connection_error": "Connection error. Make sure the backend server is running",
+    "fill_fields": "Please fill in all fields",
+    "socials": {
+      "linkedin": "LinkedIn",
+      "github": "GitHub",
+      "instagram": "Instagram",
+      "facebook": "Facebook"
+    }
+  },
+  "upload": {
+    "title": "Upload Your Video",
+    "subtitle": "Check if your video is real or fake",
+    "description": "Our AI model will analyze the uploaded video and detect any DeepFake manipulation.",
+    "click_upload": "Click here to upload your video",
+    "analyze": "Analyze Video",
+    "cancel": "Cancel",
+    "select_first": "Please select a video first",
+    "uploading": "Uploading"
+  }
+}
+

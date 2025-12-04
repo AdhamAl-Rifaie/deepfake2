@@ -1,0 +1,630 @@
+/* إعدادات أساسية */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  font-family: "Poppins", sans-serif;
+  color: white;
+  scroll-behavior: smooth;
+}
+
+.home-container {
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* 🌟 Navbar Glassy Box */
+.nav-glass {
+  position: fixed;
+  top: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(15px);
+  border-radius: 50px;
+  padding: 14px 60px;
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.1);
+  z-index: 999;
+  transition: all 0.3s ease;
+}
+
+/* 🔹 ترتيب العناصر */
+.nav-glass ul {
+  list-style: none;
+  display: flex;
+  gap: 45px;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+/* 🔸 العناصر */
+.nav-glass li {
+  display: inline-block;
+}
+
+/* 🔹 اللينكات */
+.nav-glass a {
+  color: #000000;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+/* ✨ تأثير الحركة عند الـ hover */
+.nav-glass a:hover {
+  color: #4f46e5;
+  transform: translateY(-4px);
+}
+
+/* 🔹 تأثير خط تحت اللينك عند الـ hover */
+.nav-glass a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 2px;
+  background-color: #4f46e5;
+  transition: width 0.3s ease;
+}
+
+.nav-glass a:hover::after {
+  width: 100%;
+}
+
+/* السكشنز */
+.section {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  scroll-snap-align: start;
+  background-color: transparent;
+}
+
+/* 🌟  الزرار في جيت استارت*/
+.start-btn {
+  background-color: #a5b4fc;
+  color: #fff;
+  border: none;
+  padding: 12px 32px;
+  border-radius: 30px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 1;
+  will-change: transform;
+}
+
+.start-btn:hover {
+  background-color: #4f46e5;
+  transform: scale(1.1) translateY(-3px);
+  box-shadow: 0 10px 25px rgba(79, 70, 229, 0.4);
+  z-index: 5;
+}
+
+.start-btn:hover {
+  background-color: #4f46e5 !important;
+  transform: scale(1.1) !important;
+}
+
+
+/* === ألوان السكاشن بالتناوب === */
+.dark-section {
+  background: linear-gradient(135deg, #0a0a2a 0%, #1b1b60 50%, #2b2b8a 100%);
+  color: #ffffff;
+}
+
+.light-section {
+  background-color: #f8f8fb;
+  color: #111111;
+}
+
+/* تحسين تباين الروابط في البار*/
+.nav-glass a {
+  color: #ffffff;
+}
+
+.light-section .nav-glass a,
+.light-section .nav-glass a:link {
+  color: #111111;
+}
+
+.section {
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+/* 🌤️ Overview Section */
+.overview-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 100px 30px;
+  text-align: center;
+  position: relative;
+  z-index: 0;
+}
+
+.overview-container h2 {
+  font-size: 2.8rem;
+  color: #111;
+  margin-bottom: 25px;
+}
+
+.overview-intro {
+  font-size: 1.2rem;
+  color: #333;
+  line-height: 1.8;
+  margin-bottom: 60px;
+}
+
+.overview-grid {
+  display: flex;                   /* Flex بدل grid */
+  justify-content: space-between;   /* يوزع الكروت بالتساوي */
+  flex-wrap: wrap;                 /* يسمح بالكروت تنزل لسطر ثاني على الشاشات الضيقة */
+  gap: 30px;
+  position: relative;
+  z-index: 1;
+}
+
+.overview-card {
+  flex: 1 1 30%;      /* كل كارت ياخد تقريبًا ثلث المساحة */
+  min-width: 250px;   /* أصغر حجم للكارت */
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  padding: 30px 25px;
+  text-align: left;
+
+  /* 🔧 إصلاحات التفاعل */
+  position: relative;
+  z-index: 2;
+  cursor: pointer;
+  will-change: transform, box-shadow;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  /* يمنع أي طبقة فوقه تمسك الماوس */
+  pointer-events: auto;
+}
+
+.overview-card:hover {
+  transform: translateY(-8px) scale(1.02) !important;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15) !important;
+  z-index: 10;
+}
+
+.overview-card h3 {
+  font-size: 1.5rem;
+  color: #4f46e5;
+  margin-bottom: 15px;
+}
+
+.overview-card p {
+  font-size: 1.05rem;
+  color: #444;
+  line-height: 1.7;
+}
+
+/* ✅ إصلاح تعارض AOS مع hover */
+[data-aos] {
+  transition-property: transform, box-shadow !important;
+  transition-timing-function: ease !important;
+}
+
+
+
+/* === About Section === */
+.about-section {
+  background-color: var(--white);
+  color: #111;
+  text-align: center;
+  padding: 100px 20px;
+}
+
+.text-box {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.text-box h2 {
+  font-size: 2rem;
+  color: #c7d2fe;
+  margin-bottom: 20px;
+}
+
+.text-box p {
+  font-size: 1.2rem;
+  color: #bbb;
+  margin-bottom: 30px;
+}
+
+/* 🌟 فريق العمل */
+.team-container {
+  text-align: center;
+  padding: 100px 20px;
+  position: relative;
+}
+
+.team-title {
+  font-size: 2.5rem;
+  color: #111;
+  margin-bottom: 10px;
+}
+
+.team-subtitle {
+  color: #555;
+  font-size: 1.1rem;
+  margin-bottom: 40px;
+}
+
+.team-slider-wrapper {
+  position: relative;
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  overflow: visible; /* عشان الكروت لما تطلع فوق تبان */
+}
+
+.team-slider {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 20px;
+}
+
+.team-slider::-webkit-scrollbar {
+  display: none; /* نخفي الشريط */
+}
+
+.team-card {
+  flex: 0 0 250px;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  padding: 30px 20px;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.team-card:hover {
+  transform: translateY(-15px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  z-index: 2;
+}
+
+.arrow-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.1);
+  color: #4f46e5;
+  border: 2px solid rgba(79, 70, 229, 0.3);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  font-size: 1.8rem;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(8px);
+  z-index: 5;
+ 
+  transform: scaleX(1); /* للـ right arrow */
+}
+
+[dir="rtl"] .arrow-btn.left {
+  transform: scaleX(-1); /* قلب السهم اليسار */
+}
+[dir="rtl"] .arrow-btn.right {
+  transform: scaleX(-1); /* قلب السهم اليمين */
+}
+
+
+
+.arrow-btn:hover {
+  background: rgba(79, 70, 229, 0.3);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.arrow-btn.left {
+  left: -60px;
+}
+
+.arrow-btn.right {
+  right: -60px;
+}
+
+
+
+
+
+/* سكشن الكونتاكت */
+.contact-section {
+  background: linear-gradient(135deg, #0a0a2a 0%, #1b1b60 100%);
+  color: #fff;
+  text-align: center;
+  padding: 100px 20px;
+}
+
+/* 🌌 سكشن DeepFake Overview */
+.deepfake-section {
+  background: linear-gradient(180deg, #000000 0%, #111111 100%);
+  color: white;
+  text-align: center;
+  padding: 120px 20px;
+  border-top: 2px solid #4f46e5;
+  border-bottom: 2px solid #4f46e5;
+}
+
+.deepfake-box {
+  max-width: 900px;
+  margin: auto;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 50px;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(79, 70, 229, 0.3);
+}
+
+.deepfake-box h2 {
+  font-size: 2.5rem;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+.deepfake-box p {
+  font-size: 1.2rem;
+  color: #f8fafc;
+  line-height: 1.8;
+}
+
+/* 🌟 Contact Section Layout */
+.contact-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 200px;
+  padding: 120px 12%;
+  color: white;
+  flex-wrap: wrap;
+}
+
+.contact-left {
+  margin-right: auto;
+}
+
+.contact-right {
+  margin-left: auto;
+}
+
+/* 🔹 Left Side (Social Links) */
+.contact-left h2 {
+  font-size: 2rem;
+  color: #a5b4fc;
+  margin-bottom: 15px;
+}
+
+.contact-left p {
+  color: #ffffff;
+  margin-bottom: 25px;
+}
+
+.social-list {
+  list-style: none;
+  padding: 0;
+}
+
+.social-list li {
+  margin-bottom: 28px;
+}
+
+.social-list a {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  color: rgb(255, 255, 255);
+  font-size: 1.15rem;
+  text-decoration: none;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-list a img {
+  width: 30px;
+  height: 30px;
+  filter: brightness(0) invert(1);
+  opacity: 1;
+  transition: transform 0.3s ease;
+}
+
+.social-list a:hover {
+  color: #9b9b9b;
+  transform: translateX(8px);
+}
+
+.social-list a:hover img {
+  transform: scale(1.15);
+}
+
+/* 🔹 Right Side (Form) */
+.contact-right h2 {
+  font-size: 2rem;
+  color: #a5b4fc;
+  margin-bottom: 25px;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  width: 100%;
+  max-width: 420px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  background-color: #eaeaea;
+  color: rgb(89, 89, 89);
+  border: none;
+  border-radius: 10px;
+  padding: 14px;
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  background-color: #252525;
+  box-shadow: 0 0 6px #a5b4fc;
+}
+
+.contact-btn {
+  background-color: #a5b4fc;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 12px 0;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 0 rgba(79, 70, 229, 0); /* مفيش نور في الحالة العادية */
+}
+
+.contact-btn:hover {
+  background-color: #4f46e5;
+  transform: scale(1.05);
+  box-shadow: 0 10px 25px rgba(79, 70, 229, 0.4); /* 🔥 النور البنفسجي */
+}
+
+/* 🔹 Responsive */
+@media (max-width: 900px) {
+  .contact-wrapper {
+    flex-direction: column;
+    text-align: center;
+    gap: 60px;
+    padding: 80px 6%;
+  }
+  
+  .social-list a {
+    justify-content: center;
+  }
+  
+  .contact-form {
+    margin: 0 auto;
+  }
+}
+
+/* ✅ إجبار لون اللينكات */
+.nav-glass a {
+  color: #000 !important;
+}
+
+.nav-glass a:hover {
+  color: #4f46e5 !important;
+}
+
+
+/* 🌟 AI Section */
+/* first section (image) */
+.ai-illustration {
+  width: 90%;
+  max-width: 1000px;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+
+  /* ✨ أنيميشن الدخول */
+  opacity: 0;                /* تبدأ شفافة */
+  transform: translateY(40px); /* وتبدأ نازلة لتحت */
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+/* لما الصفحة تفتح نضيف .loaded للسكشن */
+.ai-section.loaded .ai-illustration {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* تأثير hover كمان */
+.ai-illustration:hover {
+  transform: scale(1.03);
+}
+
+
+/* 🌌 Dark Section with Stars */
+/* تاثير النجوم */
+.dark-section {
+  position: relative;
+  background: linear-gradient(180deg, #0a0a2a 0%, #1b1b60 100%);
+  color: white;
+  overflow: hidden;
+  z-index: 1;
+}
+
+/* 🎇 نجوم خلفية عشوائية */
+.dark-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: transparent;
+  z-index: 0;
+  animation: twinkle 4s ease-in-out infinite alternate;
+}
+
+.dark-section::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(white 1px, transparent 1px),
+    radial-gradient(white 1px, transparent 1px),
+    radial-gradient(white 1px, transparent 1px),
+    radial-gradient(white 1px, transparent 1px),
+    radial-gradient(white 1px, transparent 1px),
+    radial-gradient(white 1px, transparent 1px);
+  background-repeat: repeat;
+  background-size: 200px 200px, 250px 250px, 300px 300px, 400px 400px, 500px 500px, 600px 600px;
+  background-position: 10px 50px, 150px 200px, 80px 400px, 250px 100px, 400px 300px, 600px 200px;
+  opacity: 0.25;
+  animation: twinkle 5s ease-in-out infinite alternate;
+}
+
+@keyframes twinkle {
+  0% { opacity: 0.15; }
+  50% { opacity: 0.35; }
+  100% { opacity: 0.15; }
+}
+
+.start-btn {
+  position: relative;
+  z-index: 20;
+  cursor: pointer;
+}
+
+#stars {
+  position: absolute;
+  z-index: 0;
+}
+.hero-bg-image {
+  opacity: 0;
+  transform: scale(1.1);
+  transition: opacity 1.5s ease-out, transform 1.5s ease-out;
+}
+
+.dark-section.loaded .hero-bg-image {
+  opacity: 1;
+  transform: scale(1);
+}
